@@ -1,0 +1,16 @@
+{% extends "base/base.html" %} 
+
+{% block title %}
+<title>reserve table</title>
+{% endblock %} 
+
+{% block reserve %}
+<form method="post" action="#" novalidate>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="add">
+    {% for table in mytables %}
+        <div> you reserved table number {{table}} </div>
+    {% endfor %}
+</form>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "base/base.html" %} 
+
+{% block title %}
+<title>remove reservations</title>
+{% endblock %} 
+
+{% block removereserve %}
+<form method="post" action="#" novalidate>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <h1> you have these tables : </h1>
+    {% for table in mytables %}
+        <div> number of table: {{table}} </div>
+    {% endfor %}
+    <input type="submit" value="add">
+</form>
+{% endblock %}

@@ -1,0 +1,11 @@
+<div class="bg-lime-600 ">
+{% if messages %}
+    {% for msg in messages %}
+        {% if "success" in msg.tags%}
+        	<p  class="bg-lime-600" >{{ msg }}</p>
+            {% else %}
+            	<p  class="  bg-red-700" >{{ msg }}</p>
+        {% endif %}
+    {% endfor %}
+{% endif %}
+</div>

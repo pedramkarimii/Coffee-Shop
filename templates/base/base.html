@@ -1,0 +1,23 @@
+<html lang="fa">
+    {% include "base/head.html" %}
+    {% block title %}
+    <title>home</title>
+    {% endblock %}
+    <body>
+        {% include 'base/navbar.html' %} 
+        {% include 'base/messages.html' %} 
+        {% block home %} {% endblock  %}
+        {% block menu %} {% endblock  %}
+        {% block product %} {% endblock  %}
+        {% block cart %} {% endblock  %}
+        {% block login %} {% endblock  %}
+        {% block changeimg %} {% endblock  %}
+        {% block changepass %} {% endblock  %}
+        {% block register %} {% endblock  %}
+        {% block contactus %} {% endblock  %}
+        {% block about %} {% endblock  %}
+        {% block reserve %} {% endblock  %}
+        {% block removereserve %} {% endblock  %}
+        <footer>{% include "base/footer.html" %}</footer>
+    </body>
+</html>
