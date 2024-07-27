@@ -1,0 +1,16 @@
+{% extends "base/base.html" %}
+{% comment %} for fixing this problem {% endcomment %}
+{% block home %}
+{% include "home/header.html" %}
+<main>
+    <div class="grid grid-cols-4 grid-rows-1">
+        <aside class="row-span-2 h-full">{% include "home/aside.html" %}</aside>
+        <section class="hero_section col-span-3 h-screen">
+            {% include 'home/carousel.html'%}
+        </section>
+        <section class="advanced_section col-span-4 h-full">
+            {% include "home/ourcards.html"%}
+        </section>
+    </div>
+</main>
+{% endblock %}
