@@ -1,0 +1,34 @@
+{% extends "base/base.html" %}
+
+{% block title %}
+    <title>Your Carts</title>
+{% endblock %}
+
+{% block cart %}
+    <div class="bg-gray-100 p-4 rounded-lg shadow-md">
+        <h2 class="text-xl font-bold mb-4">Your Carts</h2>
+
+        <div class="border rounded-md p-4 mb-4 bg-white shadow-md">
+            {% for order in object_list %}
+                {% if not order.is_paid %}
+                    <h3 class="font-bold italic">
+                        <a href="{% url 'detail' pk=order.pk %}" class="text-blue-800 hover:text-blue-700">Unpaid
+                            Cart</a>
+                    </h3>
+                {% endif %}
+            {% endfor %}
+        </div>
+
+        <div class="border rounded-md p-4 mb-4 bg-white shadow-md">
+            <h3 class="text-lg font-semibold mb-2">Paid Carts</h3>
+            {% for order in object_list %}
+                {% if order.is_paid %}
+                    <p><a href="{% url 'paid' pk=order.pk %}"
+                          class="text-blue-500 hover:text-blue-700">{{ forloop.counter0 }}) Invoice
+                        number:{{ order.factor_code }} | {{ order.paid_time }} | {{ order.total_price }}</a></p>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}
