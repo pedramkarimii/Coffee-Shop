@@ -1,0 +1,45 @@
+{% extends "base/base.html" %} {% block title %}
+<title>change profile photo</title>
+{% endblock %} {% block changeimg %}
+    <form class="space-y-4" action="#" method="POST">
+<div class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
+    <div
+        class="max-w-md mx-auto bg-white rounded-lg overflow-hidden shadow-md rounded shadow-lg bg-opacity-20 shadow-lg backdrop-filter backdrop-blur-lg backdrop-contrast-100 border-black border-opacity-20 rounded-lg"
+    >
+        
+            {% csrf_token %}
+                {{ form.as_p }}
+        <div class="text-center font-semibold text-gray-800 bg-gray-200 p-3">
+            Change Profile Image
+        </div>
+        <div class="p-6">
+            
+                <div class="mb-4">
+                    <label
+                        for="newImage"
+                        class="block text-gray-700 font-semibold mb-2"
+                        >New Profile Image</label
+                    >
+                    <input
+                        type="file"
+                        id="newImage"
+                        name="newImage"
+                        accept="image/*"
+                        class="w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:border-blue-500"
+                    />
+                </div>
+                <div class="flex items-center justify-between">
+                    <button
+                        type="submit"
+                        class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded focus:outline-none focus:shadow-outline"
+                    >
+                        Change Image
+                    </button>
+                </div>
+            
+        </div>
+    </div>
+    </div>
+            </form>
+    
+{% endblock %}
