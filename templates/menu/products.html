@@ -1,0 +1,35 @@
+{% extends "base/base.html" %}
+{% block title %}
+    <title>products</title>
+{% endblock %}
+{% block product %}
+
+<div
+    class="flex justify-center items-center h-60 bg-[url('/category_images/images_1.jpeg')] bg-cover bg-no-repeat bg-center"
+>
+    <h1 class="text-5xl font-bold">WELCOME TO PRODUCTS PAGE</h1>
+</div>
+<div
+    class="bg-[url('/category_images/images_1.jpeg')] bg-cover bg-no-repeat bg-center my-5"
+>
+    <div
+        class="relative grid grid-cols-3 w-3/4 h-screen m-auto p-5 gap-5 justify-around items-center"
+    >
+        {% for item in products_list %}
+        <a href="{% url 'transaction' item.id %}">
+        <div
+            class="flex flex-col justify-content items-center w-full h-full bg-white p-4 rounded-lg bg-gradient-to-br from-blue-500 to-gray-500 hover:bg-gradient-to-tl from-gray-200 to-blue-200 shadow-2xl shadow-gray-900"
+        >
+            <img class="w-1/2 h-1/2 m-auto" src="{{item.image.url}}" alt="" />
+            <h2>{{item.name}}</h2>
+            {% for i in item.category.all %}
+                <p>{{i.name}}</p>
+            {% endfor %}
+            <p>{{item.description}}</p>
+            <p>{{item.price}}</p>
+        </div>
+        </a>        
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
