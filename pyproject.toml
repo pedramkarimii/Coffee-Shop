@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "coffee-shop"
+version = "0.1.0"
+description = ""
+authors = ["pedramkarimii <pedram@9060.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+django = "^5.0.7"
+django-jazzmin = "^3.0.0"
+python-decouple = "^3.8"
+psycopg2-binary = "^2.9.9"
+pillow = "^10.4.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
